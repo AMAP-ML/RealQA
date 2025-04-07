@@ -2,7 +2,7 @@
 Next Token Is Enough: Realistic Image Quality and Aesthetic Scoring with Multimodal Large Language Model.  
 [[Paper]](https://arxiv.org/pdf/2503.06141) [[🏆 SOTA IQA]](https://paperswithcode.com/sota/image-quality-assessment-on-koniq-10k)  
 
-![RealQA](figure/dataset.pdf)
+![RealQA](figure/dataset.png.jpg)
 
 
 # Abstract
