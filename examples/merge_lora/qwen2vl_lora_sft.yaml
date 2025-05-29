@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /data/7.68T-3/limingxing.lmx/workspace/Qwen2-VL/Qwen2-VL/hugging_face/7B
+adapter_name_or_path: /data/7.68T-3/limingxing.lmx/workspace/LLaMA-Factory/saves/qwen2_vl-7b/lora/sft_v2_format_w_general_caption/checkpoint-2965
+template: qwen2_vl
+finetuning_type: lora
+
+### export
+export_dir: /data/7.68T-3/limingxing.lmx/workspace/Qwen2-VL/Qwen2-VL/hugging_face/qwen2vl-merge-general-caption
+export_size: 2
+export_device: cpu
+export_legacy_format: false

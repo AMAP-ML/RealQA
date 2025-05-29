@@ -1,0 +1,42 @@
+### model
+model_name_or_path: /data/7.68T-3/limingxing.lmx/workspace/Qwen2-VL/Qwen2-VL/hugging_face/7B
+
+### method
+stage: sft
+do_train: true
+do_eval: false
+finetuning_type: lora
+lora_target: all # 采取LoRA方法的目标模块，默认值为 all。
+
+### dataset
+dataset: aesthetic_high,aesthetic_low_and_middle # video: mllm_video_demo
+template: qwen2_vl
+cutoff_len: 2048
+# max_samples: 1000 # For debugging purposes, truncate the number of examples for each dataset
+overwrite_cache: true # Overwrite the cached training and evaluation sets.
+preprocessing_num_workers: 16
+
+### output
+output_dir: saves/qwen2_vl-7b/lora/sft
+logging_steps: 10
+save_steps: 1000
+# save_strategy: 'epoch'
+
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 5.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+### eval
+val_size: 0. # 随机从数据集中抽取多少比例的数据作为验证集，暂时设置为全部训练
+per_device_eval_batch_size: 1
+eval_strategy: 'no' # no/steps
+eval_steps: 500

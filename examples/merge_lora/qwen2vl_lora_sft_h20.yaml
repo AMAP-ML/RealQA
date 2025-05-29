@@ -1,0 +1,14 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /mnt/xmap_nas_alg/limingxing.lmx/workspace/code/aesthetic/qwen2vl-train/hugging_face/qwen2vl7B/qwen2vl7B
+# adapter_name_or_path: /mnt/xmap_nas_alg/limingxing.lmx/workspace/code/aesthetic/qwen2vl-train/saves/ava/ava_training_wo_taskid_w_score_range_lora128_loradrop015_unfreeze_vision_data_decimal2/checkpoint-3680
+adapter_name_or_path: /mnt/xmap_nas_alg/wangrui.wr/code/qwen2vl-train/test/config/one_item_en/config_item_concat_with_14k_high_mid_low/aesthetic_9502_4300_llm_fusion_en_all_original_high_mid_low_3level_9item/checkpoint-5570
+template: qwen2_vl
+finetuning_type: lora
+
+### export
+export_dir: /mnt/xmap_nas_alg/limingxing.lmx/workspace/code/aesthetic/qwen2vl-train/hugging_face/qwen2vl7B/high-mid-low
+export_size: 2
+export_device: cpu
+export_legacy_format: false
